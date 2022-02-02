@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigition_profile_host.xml"
+    app:startDestination="@id/infoFragment">
+
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.hw10.qes2.fragments.InfoProfileFragment"
+        android:label="InfoFragment" />
+    <fragment
+        android:id="@+id/registerFragment1"
+        android:name="com.example.hw10.qes2.fragments.DataFragment1"
+        android:label="RegisterFragment1" />
+</navigation>

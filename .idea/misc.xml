@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_baseline_unfold_more_24.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/linear_data_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/coomingsoon_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/coomingsoon_fragment_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/data_fragment_layout.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fav_fragment.xml" value="0.3343782654127482" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.4148148148148148" />
+        <entry key="app/src/main/res/layout/info_fragment_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/profile_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/recycler_item.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/menu/bottoom_nav_menu.xml" value="0.5" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
