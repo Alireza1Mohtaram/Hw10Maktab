@@ -12,4 +12,5 @@
     <color name="blue_second">#00b0ff</color>
     <color name="blue_prime">#2962ff</color>
     <color name="pink">#ec407a</color>
+    <color name="gray">#BDBDBD</color>
 </resources>

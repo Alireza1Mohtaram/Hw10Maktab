@@ -3,21 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1609375" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_baseline_unfold_more_24.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/linear_data_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_cheat.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.1527777777777778" />
+        <entry key="app/src/main/res/layout/activity_quiz2.xml" value="0.1453125" />
+        <entry key="app/src/main/res/layout/cheat_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/coomingsoon_fragment.xml" value="0.33" />
         <entry key="app/src/main/res/layout/coomingsoon_fragment_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/data_fragment_layout.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fav_fragment.xml" value="0.3343782654127482" />
-        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.4148148148148148" />
-        <entry key="app/src/main/res/layout/info_fragment_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/home_recycler_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/info_fragment_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/profile_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/quiz_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recycler_item.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/register_fragment_layout.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottoom_nav_menu.xml" value="0.5" />
       </map>
     </option>

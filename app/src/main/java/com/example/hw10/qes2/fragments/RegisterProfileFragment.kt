@@ -1,18 +1,25 @@
 package com.example.hw10.qes2.fragments
 
+import android.content.Context
 import android.content.Context.MODE_PRIVATE
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.ActivityResultRegistry
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+import androidx.navigation.findNavController
 import com.example.hw10.R
-import com.example.hw10.databinding.DataFragmentLayoutBinding
+import com.example.hw10.databinding.RegisterFragmentLayoutBinding
 
 
-class DataFragment1 : Fragment(R.layout.data_fragment_layout) {
+class RegisterProfileFragment : Fragment(R.layout.register_fragment_layout) {
 
 
     private lateinit var editTextPersonFullName: EditText
@@ -28,48 +35,105 @@ class DataFragment1 : Fragment(R.layout.data_fragment_layout) {
 
     lateinit var btnRegister: Button
 
-    lateinit var profileImage: Bitmap
+    lateinit var binding: RegisterFragmentLayoutBinding
 
-    lateinit var binding: DataFragmentLayoutBinding
-    lateinit var registerPic: ActivityResultLauncher<Void>
+    lateinit var observerCamera: registerCameraPic
+    lateinit var observerGalleryaPic: registerGalleryaPic
+
+
+
+
+    inner class registerCameraPic(val registry: ActivityResultRegistry) : DefaultLifecycleObserver {
+
+        lateinit var registerCameraPic: ActivityResultLauncher<Void>
+
+        override fun onCreate(owner: LifecycleOwner) {
+
+            registerCameraPic =
+                registry.register("key2", owner, ActivityResultContracts.TakePicturePreview()) {
+                    if (it != null) {
+                        notify("height : ${it.height} , width :${it.width} ")
+                    }
+                }
+        }
+        fun selectImageCamera() {
+            registerCameraPic.launch(null)
+        }
+        private fun notify(message: String) {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+    inner class registerGalleryaPic(val registry: ActivityResultRegistry ) : DefaultLifecycleObserver {
+
+        lateinit var registerGalleryaPic: ActivityResultLauncher<String>
+
+        override fun onCreate(owner: LifecycleOwner) {
+            registerGalleryaPic =
+                registry.register("key", owner, ActivityResultContracts.GetContent()) {
+                    notify(it.toString())
+                }
+
+        }
+
+        fun selectImage() {
+            registerGalleryaPic.launch("image/*")
+        }
+
+        fun notify(message: String) {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        observerCamera = registerCameraPic(requireActivity().activityResultRegistry)
+        lifecycle.addObserver(observerCamera)
+
+        observerGalleryaPic = registerGalleryaPic(requireActivity().activityResultRegistry)
+        lifecycle.addObserver(observerGalleryaPic)
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding = DataFragmentLayoutBinding.bind(view)
+        binding = RegisterFragmentLayoutBinding.bind(view)
         initViews()
-        getRegister()
         btnRegister.setOnClickListener {
             if (validateInputs()) {
                 if (storeData()) {
-//                    parentFragmentManager.commit {
-//                        replace<InfoFragment>(R.id.fragment_ProfileConatiner,)
-//                        addToBackStack("Info")
-//                        setReorderingAllowed(true)
-//                    }
-
-                    parentFragmentManager.popBackStack()
+                    it.findNavController().navigate(R.id.infoProfileFragment)
                 }
             }
         }
-        binding.profilePhoto.setOnClickListener {
-            registerPic.launch(null)
+
+        binding.cameraChooserFab.setOnClickListener {
+            observerCamera.selectImageCamera()
         }
-    }
-
-    private fun getRegister() {
-        registerPic = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) {
-
-            notify("Image ${it.width} * ${it.height}")
-            binding.profilePhoto.setImageBitmap(it)
+        binding.gelleryChooserFab.setOnClickListener {
+            observerGalleryaPic.selectImage()
         }
-    }
-
-
-    override fun onResume() {
-        super.onResume()
 
     }
+//
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (resultCode == 1) {
+//            if (resultCode == RESULT_OK) {
+//                val uri = data?.data
+//                val img = activity?.contentResolver?.openInputStream(uri as Uri)
+//                val bitmap = BitmapFactory.decodeStream(img)
+//                notify("ok")
+//            }
+//        }
+//    }
+
 
     private fun storeData(): Boolean {
         val storeDataPreferences = requireContext().getSharedPreferences("User", MODE_PRIVATE)
@@ -143,5 +207,10 @@ class DataFragment1 : Fragment(R.layout.data_fragment_layout) {
 
 
     }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
 
 }

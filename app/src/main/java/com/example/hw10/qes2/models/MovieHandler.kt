@@ -41,4 +41,8 @@ class MovieHandler(fragment: Fragment) {
     fun getFavs():MutableList<Movie>{
         return dataHolder.movieList.filter { m -> m.favState == Fav.ISFAV } as MutableList<Movie>   }
 
+
+    fun getAllMovies(): MutableList<Movie> {
+        return dataHolder.movieList
+    }
 }

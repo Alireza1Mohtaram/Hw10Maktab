@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_quiz.xml"
+    app:startDestination="@id/quiz">
+    <fragment
+        android:id="@+id/cheatActivity"
+        android:name="com.example.hw9.CheatFragment"
+        android:label="CheatActivity" />
+    <fragment
+        android:id="@+id/quiz"
+        android:name="com.example.hw9.QuizFragment"
+        android:label="Quiz" >
+        <action
+            android:id="@+id/action_quiz_to_cheatActivity"
+            app:destination="@id/cheatActivity" />
+    </fragment>
+</navigation>

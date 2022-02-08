@@ -175,17 +175,34 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profile_photo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:scaleType="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:minHeight="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:shapeAppearanceOverlay="@style/RoundedImage"
         app:layout_constraintHorizontal_bias="0.5"
+        android:background="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        android:src="@drawable/ic_outline_face_24"
+        app:shapeAppearanceOverlay="@style/RoundedImage"
+        app:srcCompat="@drawable/ic_baseline_person_24"
         />
-
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    app:layout_constraintStart_toEndOf="@id/profile_photo"
+    app:layout_constraintBottom_toBottomOf="@id/profile_photo"
+    android:src="@android:drawable/ic_menu_gallery"
+    android:layout_height="wrap_content"
+    android:id="@+id/gelleryChooserFab"
+    />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/profile_photo"
+        app:layout_constraintBottom_toBottomOf="@id/profile_photo"
+        android:src="@android:drawable/ic_menu_camera"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraChooserFab"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

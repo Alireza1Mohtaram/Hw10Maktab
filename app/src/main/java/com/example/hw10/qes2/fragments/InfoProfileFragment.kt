@@ -41,7 +41,7 @@ class InfoProfileFragment : Fragment(R.layout.info_fragment_layout) {
                 tvPasswordResult =it.tvPasswordResult
                 tvUEmailResult = it.tvUEmailResult
                 tvGenderResult = it.tvGenderResult
-                tvPhoneNumber =it.tvPhone
+                tvPhoneNumber =it.tvPhoneResult
             }
 
     }

@@ -23,7 +23,7 @@ class RecyclerMoviesAdpter(movies:MutableList<Movie>): RecyclerView.Adapter<Recy
 
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val movieItem = inflater.inflate(R.layout.recycler_item,parent,false)
+        val movieItem = inflater.inflate(R.layout.fav_recycler_item,parent,false)
         return RecyclerItemAdapter(movieItem)
 
     }

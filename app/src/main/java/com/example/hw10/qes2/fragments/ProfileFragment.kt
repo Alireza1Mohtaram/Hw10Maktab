@@ -13,17 +13,18 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
     lateinit var navController: NavController
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    }
-    override fun onResume() {
-        super.onResume()
         navController = Navigation.findNavController(requireActivity(),
             R.id.fragment_ProfileConatiner
         )
+    }
+    override fun onResume() {
+        super.onResume()
+
         val sp =  requireContext().getSharedPreferences("User", Context.MODE_PRIVATE)
         if (sp.contains("email")){
-            navController.navigate(R.id.infoFragment)
+            navController.navigate(R.id.infoProfileFragment)
         }else{
-            navController.navigate(R.id.registerFragment1)
+            navController.navigate(R.id.registerProfileFragment)
         }
     }
 }

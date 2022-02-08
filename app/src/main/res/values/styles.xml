@@ -5,4 +5,13 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+    <style name="profile_item_style" >
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+    <style name="profile_item_style_result">
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>
